@@ -4,6 +4,8 @@
  * @package constants
  */
 
+import { TodoType } from '../interfaces/Todo';
+
 /**
  * Todoリストの処置値
  */
