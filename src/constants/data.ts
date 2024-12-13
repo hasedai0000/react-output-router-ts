@@ -3,7 +3,6 @@
  *
  * @package constants
  */
-
 import { TodoType } from '../interfaces/Todo';
 
 /**
@@ -25,4 +24,4 @@ export const INIT_TODO_LIST: Array<TodoType> = [
 /**
  * Todo採番IDの初期値
  */
-export const INIT_TODO_ID = INIT_TODO_LIST.length;
+export const INIT_UNIQUE_ID = INIT_TODO_LIST.length;
