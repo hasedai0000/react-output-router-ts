@@ -1,20 +1,22 @@
 import styles from './styles.module.css';
-import { useState } from 'react';
 import { InputForm } from '../../atoms/InputForm';
 import { TodoList } from '../../organisms/TodoList';
 import { BaseLayout } from '../../organisms/BaseLayout';
+import { useTodoTemplate } from './useTodoTemplate';
+import { useTodoContext } from '../../../contexts/TodoContext';
 
 export const TodoTemplate = () => {
-  const [inputValue, setInputValue] = useState<string>('');
+  const { todoList, deleteTodo } = useTodoContext();
+  const [{ searchKeyword, showTodoList }, { handleChangeSearchKeyword }] = useTodoTemplate({ todoList });
 
   return (
     <BaseLayout title="TodoList">
       <div className={styles.container}>
         <div className={styles.area}>
-          <InputForm placeholderText={'Serach Word'} inputValue={inputValue} setInputValue={setInputValue} />
+          <InputForm placeholderText={'Serach Word'} inputValue={searchKeyword} onChange={handleChangeSearchKeyword} />
         </div>
         <div className={styles.area}>
-          <TodoList inputValue={inputValue} />
+          {showTodoList.length > 0 && <TodoList todoList={showTodoList} handleDeleteTodo={deleteTodo} />}
         </div>
       </div>
     </BaseLayout>
