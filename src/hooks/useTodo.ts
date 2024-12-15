@@ -4,7 +4,7 @@
  * @package hooks
  */
 import { useState, useCallback } from 'react';
-import { INIT_TODO_LIST } from '../constants/data';
+import { INIT_TODO_LIST, INIT_UNIQUE_ID } from '../constants/data';
 
 /**
  * useTodo
@@ -12,8 +12,33 @@ import { INIT_TODO_LIST } from '../constants/data';
 export const useTodo = () => {
   /* todolist */
   const [todoList, setTodoList] = useState(INIT_TODO_LIST);
+  /* uniqueId */
+  const [uniqueId, setUniqueId] = useState(INIT_UNIQUE_ID);
 
   /* actions */
+  /**
+   * Todo追加処理
+   * @param { string } title
+   * @param { string } content
+   */
+  const addTodo = useCallback(
+    (title: string, content: string) => {
+      if (title === '' || content === '') return;
+      const newUniqueId = uniqueId + 1;
+      const newTodoList = [
+        ...todoList,
+        {
+          id: newUniqueId,
+          title: title,
+          content: content,
+        },
+      ];
+      setTodoList(newTodoList);
+      setUniqueId(newUniqueId);
+    },
+    [todoList, uniqueId]
+  );
+
   /**
    * Todo削除処理
    * @param { number } targetId
@@ -29,10 +54,9 @@ export const useTodo = () => {
     [todoList]
   );
 
-  console.log(todoList);
-
   return {
     todoList,
+    addTodo,
     deleteTodo,
   };
 };
