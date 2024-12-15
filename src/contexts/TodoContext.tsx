@@ -14,6 +14,7 @@ type Props = {
 interface ContextInterface {
   todoList: Array<TodoType>;
   deleteTodo: (targetId: number, targetTitle: string) => void;
+  addTodo: (title: string, content: string) => void;
 }
 
 /**
@@ -28,9 +29,9 @@ const TodoContext = createContext({} as ContextInterface);
  */
 export const TodoProvider: FC<Props> = ({ children }) => {
   // カスタムフックから状態とロジックを呼び出してコンテキストプロバイダーにあてがう
-  const { todoList, deleteTodo } = useTodo();
+  const { todoList, deleteTodo, addTodo } = useTodo();
 
-  return <TodoContext.Provider value={{ todoList, deleteTodo }}>{children}</TodoContext.Provider>;
+  return <TodoContext.Provider value={{ todoList, deleteTodo, addTodo }}>{children}</TodoContext.Provider>;
 };
 
 /**

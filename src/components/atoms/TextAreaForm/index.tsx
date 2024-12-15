@@ -1,18 +1,17 @@
 import styles from './styles.module.css';
 import { EventType } from '../../../interfaces/Event';
 
-type InputFormProps = {
+type TextAreaFormProps = {
   disabled?: boolean;
   placeholderText?: string;
   inputValue: string;
-  onChange: EventType['onChangeInput'];
+  onChange: EventType['onChangeTextArea'];
 };
 
-export const InputForm = ({ disabled = false, placeholderText, inputValue, onChange }: InputFormProps) => {
+export const TextAreaForm = ({ disabled = false, placeholderText, inputValue, onChange }: TextAreaFormProps) => {
   return (
-    <input
-      className={styles.input}
-      type="text"
+    <textarea
+      className={styles.text}
       placeholder={placeholderText}
       value={inputValue}
       onChange={onChange}
