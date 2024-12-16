@@ -15,7 +15,7 @@ import { TodoCreatePage } from '../pages/create';
 export const router = createBrowserRouter([
   {
     path: NAVIGATION_LIST.TOP,
-    element: <TodoPage />,
+    element: <TodoListPage />,
   },
   {
     path: NAVIGATION_LIST.CREATE,

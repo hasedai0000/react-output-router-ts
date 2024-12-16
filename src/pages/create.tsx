@@ -7,7 +7,7 @@ import { TodoCreateTemplate } from '../components/templates/TodoCreateTemplate';
 
 /**
  * TodoCreatePage
- * @returns {JSX.Element}
+ * @returns {TSX.Element}
  * @constructor
  */
 export const TodoCreatePage = () => <TodoCreateTemplate />;

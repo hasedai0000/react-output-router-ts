@@ -3,11 +3,11 @@
  *
  * @package pages
  */
-import { TodoTemplate } from '../components/templates/TodoTemplate';
+import { TodoListTemplate } from '../components/templates/TodoListTemplate';
 
 /**
  * TodoPage
- * @returns {JSX.Element}
+ * @returns {TSX.Element}
  * @constructor
  */
-export const TodoPage = () => <TodoTemplate />;
+export const TodoListPage = () => <TodoListTemplate />;

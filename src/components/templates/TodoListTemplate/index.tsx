@@ -5,7 +5,7 @@ import { BaseLayout } from '../../organisms/BaseLayout';
 import { useTodoTemplate } from './useTodoTemplate';
 import { useTodoContext } from '../../../contexts/TodoContext';
 
-export const TodoTemplate = () => {
+export const TodoListTemplate = () => {
   const { todoList, deleteTodo } = useTodoContext();
   const [{ searchKeyword, showTodoList }, { handleChangeSearchKeyword }] = useTodoTemplate({ todoList });
 
