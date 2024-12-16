@@ -19,6 +19,7 @@ export const NAVIGATION_LIST = {
   TOP: `${BASE_PATH}/`,
   CREATE: `${BASE_PATH}/create`,
   DETAIL: `${BASE_PATH}/detail/:id`,
+  EDIT: `${BASE_PATH}/edit/:id`,
 };
 
 /**
@@ -30,4 +31,5 @@ export const NAVIGATION_PATH = {
   TOP: `${BASE_PATH}/`,
   CREATE: `${BASE_PATH}/create`,
   DETAIL: `${BASE_PATH}/detail/`,
+  EDIT: `${BASE_PATH}/edit/`,
 };

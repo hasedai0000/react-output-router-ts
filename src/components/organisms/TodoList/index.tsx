@@ -10,7 +10,7 @@ type TodoListProps = {
 };
 
 export const TodoList = ({ todoList, handleDeleteTodo }: TodoListProps) => {
-  const [{ handleMoveDetailPage }] = useTodoList();
+  const [{ handleMoveDetailPage, handleMoveEditPage }] = useTodoList();
   return (
     <ul className={styles.list}>
       {todoList.map((todo) => (
@@ -21,7 +21,7 @@ export const TodoList = ({ todoList, handleDeleteTodo }: TodoListProps) => {
               <FontAwesomeIcon icon={faFile} size="lg" onClick={() => handleMoveDetailPage(todo.id)} />
             </div>
             <div className={styles.far}>
-              <FontAwesomeIcon icon={faPenToSquare} size="lg" />
+              <FontAwesomeIcon icon={faPenToSquare} size="lg" onClick={() => handleMoveEditPage(todo.id)} />
             </div>
             <div className={styles.far}>
               <FontAwesomeIcon icon={faTrashAlt} size="lg" onClick={() => handleDeleteTodo(todo.id, todo.title)} />
