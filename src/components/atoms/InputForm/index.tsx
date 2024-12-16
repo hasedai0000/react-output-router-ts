@@ -5,7 +5,7 @@ type InputFormProps = {
   disabled?: boolean;
   placeholderText?: string;
   inputValue: string;
-  onChange: EventType['onChangeInput'];
+  onChange?: EventType['onChangeInput'];
 };
 
 export const InputForm = ({ disabled = false, placeholderText, inputValue, onChange }: InputFormProps) => {
