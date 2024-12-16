@@ -54,9 +54,31 @@ export const useTodo = () => {
     [todoList]
   );
 
+  /**
+   * Todo更新処理
+   * @param { number } targetId
+   * @param { string } title
+   * @param { string } content
+   */
+  const updateTodo = useCallback((targetId: number, title: string, content: string) => {
+    if (title === '' || content === '') return;
+    const updateTodoList = todoList.map((todo) => {
+      if (todo.id === targetId) {
+        return {
+          id: todo.id,
+          title: title,
+          content: content,
+        };
+      }
+      return todo;
+    });
+    setTodoList(updateTodoList);
+  }, []);
+
   return {
     todoList,
     addTodo,
     deleteTodo,
+    updateTodo,
   };
 };

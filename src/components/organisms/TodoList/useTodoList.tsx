@@ -9,6 +9,7 @@ import { NAVIGATION_PATH } from '../../../constants/navigation';
 
 type ActionType = {
   handleMoveDetailPage: (id: number) => void;
+  handleMoveEditPage: (id: number) => void;
 };
 
 /**
@@ -26,8 +27,16 @@ export const useTodoList = () => {
     [navigate]
   );
 
+  const handleMoveEditPage = useCallback(
+    (id: number) => {
+      navigate(`${NAVIGATION_PATH.EDIT}${id}`);
+    },
+    [navigate]
+  );
+
   const actions: ActionType = {
     handleMoveDetailPage,
+    handleMoveEditPage,
   };
 
   return [actions] as const;
