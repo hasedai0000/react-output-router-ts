@@ -18,6 +18,7 @@ export const BASE_PATH = '/react-output-router-ts';
 export const NAVIGATION_LIST = {
   TOP: `${BASE_PATH}/`,
   CREATE: `${BASE_PATH}/create`,
+  DETAIL: `${BASE_PATH}/detail/:id`,
 };
 
 /**
@@ -28,4 +29,5 @@ export const NAVIGATION_LIST = {
 export const NAVIGATION_PATH = {
   TOP: `${BASE_PATH}/`,
   CREATE: `${BASE_PATH}/create`,
+  DETAIL: `${BASE_PATH}/detail/`,
 };

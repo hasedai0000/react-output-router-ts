@@ -5,7 +5,7 @@ type TextAreaFormProps = {
   disabled?: boolean;
   placeholderText?: string;
   inputValue: string;
-  onChange: EventType['onChangeTextArea'];
+  onChange?: EventType['onChangeTextArea'];
 };
 
 export const TextAreaForm = ({ disabled = false, placeholderText, inputValue, onChange }: TextAreaFormProps) => {
